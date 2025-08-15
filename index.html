@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PhysioAssist Landing</title>
+
+  <!-- Google Font: Quicksand Bold -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+  html, body {
+  width: 100%;
+  overflow-x: auto; /* allow scrolling instead of wrapping */
+}
+
+body {
+  min-width: 1200px; /* set your desktop width */
+}
+
+.section-box, .why-section {
+  flex-wrap: nowrap; /* prevent wrapping on small screens */
+}
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: linear-gradient(to bottom, #FFFFFF, #BBD6EA, #7295CD);
+      font-family: Arial, sans-serif;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: transparent;
+    }
+
+    .logo {
+      height: 40px;
+    }
+
+    .contact-button {
+      background-color: #7295CD;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 50px;
+      font-size: 16px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+	  font-family: 'Quicksand', sans-serif;
+	  font-weight:bold;
+    }
+
+    .contact-button:hover {
+      background-color: #5c7eb2;
+    }
+
+    .content {
+      background-color: white;
+      width: 90%;
+      height: auto;
+      margin: auto;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+	 
+    }
+
+    .section-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch; /* Aligns both sides to the same height */
+      height: 100%;
+    }
+
+    .text-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-self: flex-start;
+	  font-weight:bold;
+    }
+
+    .text-content h1 {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 60px;
+      color: #2B426A;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .text-content h1 span {
+      color: #7295CD;
+    }
+
+    .text-content p {
+	  font-family: 'Quicksand', sans-serif;
+      font-size: 18px;
+      color: #333;
+      margin: 50px 0;
+      max-width: 500px;
+    }
+
+  .join-button {
+  background-color: #7295CD;
+  color: white;
+  padding: 6px 12px;        
+  border: none;
+  border-radius: 999px;    
+  font-size: 20px;         
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 45px;
+  white-space: nowrap;     
+  width: fit-content; 
+font-family: 'Quicksand', sans-serif;  
+}
+
+
+    .image-content {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+
+    .image-content img {
+      max-height: 100%;
+      max-width: 100%;
+	  object-fit: contain;
+    }
+	
+	.why-header {
+  text-align:left;
+  margin-bottom: 5px;
+}
+
+.why-header h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 40px;
+  color: #7295CD;
+  margin: 0;
+}
+
+.why-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  flex: 9;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.feature img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+}
+
+.feature-text {
+  font-family: 'Quicksand', sans-serif;
+  color: #2B426A;
+  font-size: 25px;
+   font-weight: 400; /* default weight */
+}
+.feature-text strong {
+  font-weight: 700; /* make only the strong parts bold */
+}
+
+.light-text {
+  font-weight: 300; /* lighter version */
+}
+.app-image {
+  flex: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.app-image img {
+  max-width: 150%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: -40px; /* Prevent visible gap at the bottom */
+}
+
+.about-section {
+  background-color: white;
+  width: 90%;
+  margin: 40px auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Quicksand', sans-serif;
+
+}
+
+.about-title {
+  text-align: left;
+  color: #7295CD;
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.about-paragraph {
+  color: #2B426A;
+  font-size: 30px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  width: 100%;                /* Fill available width */
+  text-align: left;
+
+}
+
+
+.key-features {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+.key-features-title {
+  font-size: 30px;
+  color: #2B426A;
+  
+}
+
+.feature-pill {
+  background-color: #BBD6EA;
+  color: #2B426A;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 20px;
+  
+}
+
+ .footer {
+    background-color: #EEF1F6;
+    border-radius: 20px 20px 0 0;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+  }
+
+  .footer-email-btn {
+    width: 270px;
+    height: auto;
+    cursor: pointer;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 50px;
+  }
+
+  .footer-link {
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+	
+	 font-family: 'Quicksand', sans-serif;
+	
+  }
+
+  .footer-right {
+    text-align: left;
+  }
+
+  .footer-title {
+    font-family: 'Quicksand', sans-serif;
+    color: #7295CD;
+    font-size: 25px;
+	font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+    font-family: 'Quicksand', sans-serif;
+    color: #7295CD;
+  }
+
+  .footer-contact li {
+    margin-bottom: 5px;
+  }
+
+  .footer-copy {
+    font-size: 12px;
+    color: #7295CD;
+    font-family: 'Quicksand', sans-serif;
+	 margin-top: 80px;
+  }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <img src="Small Size Logo.png" alt="Logo" class="logo" />
+    <a href="mailto:PhysioAssisting@gmail.com" class="contact-button">Contact Us</a>
+  </header>
+
+   <!-- First Box Section -->
+  <div class="content">
+    <div class="section-box">
+      <div class="text-content">
+        <div>
+          <h1>
+            Expand Your <br>
+            Practice With<br>
+            <span>PhysioAssist</span>
+          </h1>
+          <p>
+            Provide high-quality care to patients—wherever they<br>
+            are in the region—through PhysioAssist’s secure virtual<br>
+            consultation platform.
+          </p>
+        </div>
+        <a href="mailto:PhysioAssisting@gmail.com" class="join-button">Join as a Consultant ></a>
+      </div>
+
+      <div class="image-content">
+        <img src="Welcome Image_1.png" alt="Welcome Image" />
+      </div>
+    </div>
+  </div> <!-- ✅ Properly closed first box -->
+
+  <!-- Second Box Section -->
+  <div class="content" style="margin-top: 40px;">
+    <div class="why-header">
+      <h2>Why PhysioAssist?</h2>
+    </div>
+
+    <div class="why-section">
+      <div class="features-grid">
+        <div class="feature">
+          <img src="AI Powered.png" alt="AI Powered" />
+          <div class="feature-text">
+            <strong>AI Powered:</strong><br />
+            Real-time guidance <br />& chatbot support
+          </div>
+        </div>
+
+        <div class="feature">
+          <img src="Patient-Approved.png" alt="Patient Approved" />
+          <div class="feature-text">
+            <strong>Patient-Approved:</strong><br />
+            Easy, safe home<br />exercises
+          </div>
+        </div>
+
+        <div class="feature">
+          <img src="Doctor-Friendly.png" alt="Doctor Friendly" />
+          <div class="feature-text">
+            <strong>Doctor-Friendly:</strong><br />
+            Remote tracking &<br />fewer follow-ups
+          </div>
+        </div>
+
+        <div class="feature">
+          <img src="Secure.png" alt="Secure" />
+          <div class="feature-text">
+            <strong>Secure:</strong><br />
+            HIPAA-compliant<br />& data encrypted
+          </div>
+        </div>
+      </div>
+
+      <div class="app-image">
+        <img src="App Ad.png" alt="App Ad" />
+      </div>
+    </div>
+  </div>
+<!-- About PhysioAssist Section -->
+<div class="about-section">
+  <div class="about-title">About PhysioAssist</div>
+
+  <div class="about-paragraph">
+    PhysioAssist is a smart solution that relies on artificial intelligence to monitor
+    patient performance during at-home physical therapy exercises. By accurately
+    tracking and analyzing body movements, it provides instant guidance to ensure
+    exercises are performed correctly and safely — helping to accelerate recovery and
+    improve the overall patient experience.
+  </div>
+
+  <div class="key-features">
+    <div class="key-features-title">Key Features</div>
+    <div class="feature-pill">Precision Motion Tracking</div>
+    <div class="feature-pill">Excercise-Specific Logic</div>
+    <div class="feature-pill">Real-Time Guidance & Corrections</div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-left">
+    <!-- Email Image Button -->
+    <a href="mailto:PhysioAssisting@gmail.com">
+      <img src="Footer Email Link.png" alt="Email Us" class="footer-email-btn">
+    </a>
+
+    <!-- Policy Links -->
+    <div class="footer-links">
+      <a href="#" class="footer-link">Privacy Policy</a>
+      <a href="#" class="footer-link">Terms & Conditions</a>
+    </div>
+  </div>
+
+  <div class="footer-right">
+    <h3 class="footer-title">Stay Connected With Us!</h3>
+    <ul class="footer-contact">
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#7295CD" viewBox="0 0 24 24" width="16" height="16"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.05-.24 11.05 11.05 0 003.45.55 1 1 0 011 1v3.5a1 1 0 01-1 1A17.92 17.92 0 012 4a1 1 0 011-1h3.5a1 1 0 011 1 11.05 11.05 0 00.55 3.45 1 1 0 01-.24 1.05l-2.2 2.2z"/></svg>
+        +966 53 214 0665
+      </li>
+      
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#7295CD" viewBox="0 0 24 24" width="16" height="16"><path d="M4 4h16v16H4V4zm8 8l8-5H4l8 5z"/></svg>
+        PhysioAssisting@gmail.com
+      </li>
+     
+    </ul>
+    <p class="footer-copy">© 2025 PhysioAssist. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
